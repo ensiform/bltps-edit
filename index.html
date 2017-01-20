@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="tabs.css">
+        <meta charset="UTF-8">
+        <title>Gibbed's Borderlands: The Pre-Sequel! Save Editor</title>
+    </head>
+    <body>
+        <div name="mainToolbar" class="toolbar">
+            <button id="filenew" class="new"><img src="assets/fugue/document.png"> New</button>
+            <button id="fileopen" class="open"><img src="assets/fugue/folder-open-document.png"> Open</button>
+            <button id="filesave" class="save" disabled><img src="assets/fugue/disk-black.png"> Save</button>
+        </div>
+        <div class="etabs-tabgroup">
+            <div class="etabs-tabs"></div>
+            <div class="etabs-buttons"></div>
+        </div>
+        <div class="etabs-views"></div>
+        <script>
+            require('./tabs.js')
+            require('./saveLoad.js')
+         </script>
+    </body>
+</html>

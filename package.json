@@ -1,0 +1,15 @@
+{
+  "name": "bltps_electron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --debug"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron-tabs": "^0.4.2"
+  }
+}

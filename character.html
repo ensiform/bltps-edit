@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="tabs.css">
+        <meta charset="UTF-8">
+        <title>Gibbed's Borderlands: The Pre-Sequel! Save Editor</title>
+    </head>
+    <body>
+        <h1>General</h1>
+            <label for="chrclass">Class:</label>
+            <select id="chrclass" name="chrclass" disabled>
+                <option value="claptrap">Claptrap (Fragtrap)</option>
+                <option value="nisha">Nisha (Lawbringer)</option>
+                <option value="wilhelm">Wilhelm (Enforcer)</option>
+                <option value="athena">Athena (Gladiator)</option>
+                <option value="jack">Jack (Doppelganger)</option>
+                <option value="aurelia">Aurelia (Baroness)</option>
+            </select><br>
+            <label for="xp_level">Experience Level:</label>
+            <input type="number" id="xp_level" name="xp_level" value="1" min=1 max=70 disabled>
+            <button type="number" disabled>Sync</button><br>
+            <label for="xp_points">Experience Points:</label>
+            <input type="number" id="xp_points" name="xp_points" value="0" min=0 disabled>
+            <button type="number" disabled>Sync</button><br>
+            <label for="op_level">Overpower Level:</label>
+            <input type="number" id="op_level" name="op_level" value="0" min=0 disabled><br>
+            <label for="skillpoints">General Skill Points:</label>
+            <input type="number" id="skillpoints" name="skillpoints" value="0" min=0 disabled><br>
+            <label for="spec_skillpoints">Specialist Skill Points:</label>
+            <input type="number" id="spec_skillpoints" name="spec_skillpoints" value="0" min=0 disabled><br>
+        <h1>Customization</h1>
+        <label for="chr_name">Name:</label>
+        <input type="text" id="chr_name" name="chr_name" value="Claptrap" disabled><br>
+        <label for="chr_head">Head:</label>
+        <select id="chr_head" name="chr_head" disabled><option>None</option></select><br>
+        <label for="chr_skin">Skin:</label>
+        <select id="chr_skin" name="chr_skin" disabled><option>None</option></select>
+    </body>
+</html>
