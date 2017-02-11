@@ -1,10 +1,19 @@
-const path = require('path')
+'use strict'
+
 const electron = require('electron')
-
-const BrowserWindow = electron.BrowserWindow
 const app = electron.app
-
+const BrowserWindow = electron.BrowserWindow
+const Menu = require('electron').Menu
+const dialog = require('electron').dialog
+const path = require('path')
 const debug = /--debug/.test(process.argv[2])
+
+// Manage unhandled exceptions as early as possible
+process.on('uncaughtException', (e) => {
+  console.error(`Caught unhandled exception: ${e}`)
+  dialog.showErrorBox('Caught unhandled exception', e.message || 'Unknown error message')
+  app.quit()
+})
 
 app.setName('Gibbed\'s Borderlands: The Pre-Sequel! Save Editor')
 
@@ -12,10 +21,18 @@ var mainWindow = null
 
 function initialize() {
     function createWindow() {
+        const windowStateKeeper = require('electron-window-state');
+        let mainWindowState = new windowStateKeeper({
+            defaultWidth: 895,
+            defaultHeight: 560
+        });
+
         var windowOptions = {
-            width: 895,
+            width: mainWindowState.width,
+            height: mainWindowState.height,
+            x: mainWindowState.x,
+            y: mainWindowState.y,
             minWidth: 895,
-            height: 560,
             title: app.getName()
         }
 
@@ -27,12 +44,18 @@ function initialize() {
         mainWindow.loadURL(path.join('file://', __dirname, '/index.html'))
         //mainWindow.setMenu(null)
 
+        mainWindowState.manage(mainWindow)
+
         // Launch fullscreen with DevTools open, usage: npm run debug
         if (debug) {
             mainWindow.webContents.openDevTools()
             mainWindow.maximize()
             require('devtron').install()
         }
+
+        mainWindow.on('close', function() {
+            mainWindowState.saveState(mainWindow)
+        })
 
         mainWindow.on('closed', function () {
             mainWindow = null

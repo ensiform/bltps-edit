@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="tabs.css">
         <meta charset="UTF-8">
         <title>Gibbed's Borderlands: The Pre-Sequel! Save Editor</title>
     </head>
     <body>
-        <h1>Save</h1>
-        <label for="saveguid">Save GUID:</label>
-        <input type="text" id="saveguid" name="saveguid" value="00000000-0000-0000-0000-000000000000" minlength="36" maxlength="36" size="36" disabled>
-        <button type="button" disabled>Random</button><br>
-        <label for="saveslot">Save Slot:</label>
-        <input type="number" id="saveslot" name="saveslot" min="0" size="40" disabled><br>
-        <label for="saveplat">Platform:</label>
-        <select id="saveplat" name="saveplat" disabled>
-            <option value="pc">PC/Linux/Mac</option>
-            <option value="x360">Xbox 360</option>
-            <option value="ps3">PS3</option>
-            <option value="android">Android</option>
-        </select>
-        <h1>Importing</h1>
-        <button type="button" disabled>Import Skills</button>
-        <button type="button" disabled>Import Missions</button>
-        <button type="button" disabled>Import World</button>
-        <button type="button" disabled>Import Stats</button>
+        <h3>Save</h3>
+        <div class="input-group">
+            <span class="input-group-addon">Save GUID</span>
+            <input type="text" id="saveguid" class="form-control" value="00000000-0000-0000-0000-000000000000" minlength="36" maxlength="36" size="36" disabled>
+            <span class="input-group-btn">
+                <button class="btn btn-default disabled" type="button" disabled>Random</button>
+            </span>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">Save Slot</span>
+            <input type="number" id="saveslot" class="form-control" min="0" size="40" disabled>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon">Platform</span>
+            <select id="saveplat" class="form-control" disabled>
+                <option value="pc">PC/Linux/Mac</option>
+                <option value="x360">Xbox 360</option>
+                <option value="ps3">PS3</option>
+                <option value="android">Android</option>
+            </select>
+        </div>
+        <h3>Importing</h3>
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" disabled>Import Skills</button>
+            <button type="button" class="btn btn-default" disabled>Import Missions</button>
+            <button type="button" class="btn btn-default" disabled>Import World</button>
+            <button type="button" class="btn btn-default" disabled>Import Stats</button>
+        </div>
     </body>
 </html>

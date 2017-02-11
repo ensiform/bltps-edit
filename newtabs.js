@@ -1,0 +1,9 @@
+$("#general").load("general.html");
+$("#character").load("character.html");
+$("#vehicle").load("vehicle.html");
+$("#currency").load("currency.html");
+$("#fast-travel").load("fast-travel.html");
+$("#backpack").load("backpack.html");
+$("#bank").load("bank.html");
+$("#raw").load("raw.html");
+$("#about").load("about.html");

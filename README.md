@@ -11,7 +11,5 @@ This is currently just a visual prototype and does not actually function as a sa
 ### Dependencies
 * NodeJS
 * Electron
-* electron-tabs
-
-Most UI interface icons are courtesy of Fugue Icons available at
-  http://p.yusukekamiyamane.com/
+* jQuery
+* Bootstrap

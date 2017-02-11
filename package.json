@@ -1,15 +1,19 @@
 {
   "name": "bltps_electron",
   "version": "1.0.0",
-  "description": "",
+  "description": "Unofficial WIP Borderlands: The Pre-Sequel! Save Editor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ensiform/bltps-edit"
+  },
   "main": "main.js",
   "scripts": {
     "start": "electron .",
     "dev": "electron . --debug"
   },
   "author": "",
-  "license": "ISC",
+  "license": "Zlib",
   "dependencies": {
-    "electron-tabs": "^0.4.2"
+    "jquery": "^3.1.1"
   }
 }

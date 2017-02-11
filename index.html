@@ -1,24 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <link rel="stylesheet" href="tabs.css">
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./css/bootstrap.min.css" rel="stylesheet">
+        <link href="./nav-tabs.css" rel="stylesheet">
+        <link href="./main.css" rel="stylesheet">
         <title>Gibbed's Borderlands: The Pre-Sequel! Save Editor</title>
     </head>
     <body>
-        <div name="mainToolbar" class="toolbar">
-            <button id="filenew" class="new"><img src="assets/fugue/document.png"> New</button>
-            <button id="fileopen" class="open"><img src="assets/fugue/folder-open-document.png"> Open</button>
-            <button id="filesave" class="save" disabled><img src="assets/fugue/disk-black.png"> Save</button>
+        <div class="btn-toolbar" role="toolbar" id="mainToolbar">
+            <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" id="filenew_top"><span class="glyphicon glyphicon-file" aria-hidden="true"></span> New</button>
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="caret"></span>
+                <span class="sr-only">Toggle Dropdown</span>
+            </button>
+            <ul class="dropdown-menu" id="dropdown-newclass">
+                <!--<li><a id="filenew_athena" href="#">Athena</a></li>
+                <li><a href="#">Wilhelm</a></li>
+                <li><a href="#">Nisha</a></li>
+                <li><a href="#">Claptrap</a></li>
+                <li><a href="#">Jack</a></li>
+                <li><a href="#">Aurelia</a></li>-->
+            </ul>
+            <button type="button" class="btn btn-default" id="fileopen"><span class="glyphicon glyphicon-open-file" aria-hidden="true"></span> Open</button>
+            <button type="button" class="btn btn-default disabled" id="filesave" disabled><span class="glyphicon glyphicon-save-file" aria-hidden="true"></span> Save</button>
+            </div>
         </div>
-        <div class="etabs-tabgroup">
-            <div class="etabs-tabs"></div>
-            <div class="etabs-buttons"></div>
+
+        <ul class="nav nav-tabs tab-icon" role="tablist">
+            <li role="presentation"><a href="#general" aria-controls="general" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> General</a></li>
+            <li role="presentation"><a href="#character" aria-controls="character" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Character</a></li>
+            <li role="presentation"><a href="#vehicle" aria-controls="vehicle" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-road" aria-hidden="true"></span> Vehicle</a></li>
+            <li role="presentation"><a href="#currency" aria-controls="currency" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> Currency</a></li>
+            <li role="presentation"><a href="#fast-travel" aria-controls="fast-travel" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-plane" aria-hidden="true"></span> Fast Travel</a></li>
+            <li role="presentation"><a href="#backpack" aria-controls="backpack" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Backpack (0)</a></li>
+            <li role="presentation"><a href="#bank" aria-controls="bank" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span> Bank (0)</a></li>
+            <li role="presentation"><a href="#raw" aria-controls="raw" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Raw</a></li>
+            <li role="presentation" class="active"><a href="#about" aria-controls="about" role="tab" data-toggle="tab"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> About</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade" id="general">General</div>
+            <div role="tabpanel" class="tab-pane fade" id="character">Character</div>
+            <div role="tabpanel" class="tab-pane fade" id="vehicle">Vehicle</div>
+            <div role="tabpanel" class="tab-pane fade" id="currency">Currency</div>
+            <div role="tabpanel" class="tab-pane fade" id="fast-travel">Fast Travel</div>
+            <div role="tabpanel" class="tab-pane fade" id="backpack">Backpack</div>
+            <div role="tabpanel" class="tab-pane fade" id="bank">Bank</div>
+            <div role="tabpanel" class="tab-pane fade" id="raw">Raw</div>
+            <div role="tabpanel" class="tab-pane fade in active" id="about">About</div>
         </div>
-        <div class="etabs-views"></div>
+
         <script>
-            require('./tabs.js')
+            require('./ex-links.js')
             require('./saveLoad.js')
-         </script>
+            window.$ = window.jQuery = require('jquery');
+            require('./js/bootstrap.min.js');
+            require('./newtabs.js');
+            require('./playerclass.js');
+            let dlc = require('./dlcpkg.js');
+        </script>
     </body>
 </html>
