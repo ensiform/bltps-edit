@@ -16,8 +16,8 @@ sortedDLCPkgs.sort(function(a,b) {
 function createItemDLCDropdowns( storage ) {
     for (const dlc in sortedDLCPkgs) {
         if (sortedDLCPkgs.hasOwnProperty(dlc)) {
-            $(`#${storage}-weap-dropdown`).append(`<li><a href="#${sortedDLCPkgs[dlc].dlc_name.toLowerCase()}">${sortedDLCPkgs[dlc].display_name}</a></li>`);
-            $(`#${storage}-item-dropdown`).append(`<li><a href="#${sortedDLCPkgs[dlc].dlc_name.toLowerCase()}">${sortedDLCPkgs[dlc].display_name}</a></li>`);
+            $(`#${storage}-weap-dropdown`).append(`<li><a href="#${storage}-weap-${sortedDLCPkgs[dlc].dlc_name.toLowerCase()}">${sortedDLCPkgs[dlc].display_name}</a></li>`);
+            $(`#${storage}-item-dropdown`).append(`<li><a href="#${storage}-item-${sortedDLCPkgs[dlc].dlc_name.toLowerCase()}">${sortedDLCPkgs[dlc].display_name}</a></li>`);
         }
     }
 }
